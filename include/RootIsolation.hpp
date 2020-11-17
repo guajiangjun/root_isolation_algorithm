@@ -47,7 +47,7 @@ void root_isolation(const Poly<double> &f, Interval I, vector<Interval> &result,
         }
     }
 }
-void test(const Poly<double> &f1)
+void root_isolation(const Poly<double> &f1)
 {
 
     vector<Interval> result;

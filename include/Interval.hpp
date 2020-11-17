@@ -67,21 +67,15 @@ public:
     //加等一个区间
     Interval &operator+=(const Interval &I)
     {
-        double n1 = a + I.a;
-        double n2 = a + I.b;
-        double n3 = b + I.a;
-        double n4 = b + I.b;
-        a = min(n1, min(n2, min(n3, n4)));
-        b = max(n1, max(n2, max(n3, n4)));
+        a += I.a;
+        b += I.b;
         return *this;
     }
     //加等一个常数
     Interval &operator+=(const double rhs)
     {
-        double n1 = a + rhs;
-        double n2 = b + rhs;
-        a = min(n1, n2);
-        b = max(n1, n2);
+        a += rhs;
+        b += rhs;
         return *this;
     }
 #pragma endregion
@@ -90,21 +84,15 @@ public:
     //减等一个区间
     Interval &operator-=(const Interval &I)
     {
-        double n1 = a - I.a;
-        double n2 = a - I.b;
-        double n3 = b - I.a;
-        double n4 = b - I.b;
-        a = min(n1, min(n2, min(n3, n4)));
-        b = max(n1, max(n2, max(n3, n4)));
+        a -= I.b;
+        b -= I.a;
         return *this;
     }
     //减等一个常数
     Interval &operator-=(const double rhs)
     {
-        double n1 = a - rhs;
-        double n2 = b - rhs;
-        a = min(n1, n2);
-        b = max(n1, n2);
+        a -= rhs;
+        b -= rhs;
         return *this;
     }
 
